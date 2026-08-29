@@ -17,6 +17,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { background-color: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; }
 
     /* Navigation */
@@ -26,7 +27,7 @@
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .btn { background: var(--primary); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: background 0.2s; border: none; cursor: pointer; }
+    .btn { background: var(--primary); color: white; padding: 0.6rem 1.25rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: background 0.2s; border: none; cursor: pointer; display: inline-block; }
     .btn:hover { background: var(--primary-hover); }
 
     /* Hero */
@@ -34,14 +35,21 @@
     .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.25rem; }
     .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; }
 
-    /* Services Section */
+    /* Sections & Grid */
     .section { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
     .section-title { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .card { background: var(--surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s; }
+    
+    /* Cards */
+    .card { background: var(--surface); padding: 2rem; border-radius: 8px; border: 1px solid var(--border); transition: transform 0.2s; display: flex; flex-direction: column; justify-content: space-between; }
     .card:hover { transform: translateY(-4px); }
     .card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text); }
     .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+    /* Work Metrics Counter Box */
+    .metric-box { background: var(--surface); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
+    .metric-number { font-size: 2.2rem; font-weight: bold; color: var(--primary); }
+    .metric-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem; }
 
     /* Contact Form */
     .contact-form { max-width: 600px; margin: 0 auto; background: var(--surface); padding: 2.5rem; border-radius: 8px; border: 1px solid var(--border); }
@@ -88,6 +96,93 @@
       <div class="card">
         <h3>Performance & SEO</h3>
         <p>Optimized codebases, instant page load speeds, and clean technical structures built to rank high on search engines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h2 class="section-title">Our Featured Work</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+      Tailored web solutions crafted specifically for academic success, career advancement, and business growth.
+    </p>
+
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 3rem;">
+      <div class="metric-box">
+        <div class="metric-number">100+</div>
+        <div class="metric-label">Projects Delivered</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">100%</div>
+        <div class="metric-label">Mobile Responsive</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-number">&lt; 48h</div>
+        <div class="metric-label">Fast Project Turnaround</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div>
+          <span style="background: rgba(14, 165, 233, 0.15); color: #38bdf8; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">For Students</span>
+          <h3 style="margin-top: 0.8rem;">Student & Academic Portfolios</h3>
+          <p>Interactive single-page digital resumes, research project showcases, and graduate capstone portfolios designed to stand out to university committees and recruiters.</p>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <ul style="padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+            <li>Downloadable PDF Resume Integration</li>
+            <li>Project Gallery & Interactive Artifacts</li>
+            <li>Clean, ATS-Friendly Layouts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">For Professionals</span>
+          <h3 style="margin-top: 0.8rem;">Personal Brand Websites</h3>
+          <p>Sleek web presence for consultants, executives, engineers, and freelancers looking to showcase their portfolio, authority, and professional accomplishments.</p>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <ul style="padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+            <li>Custom Domain & Email Setup</li>
+            <li>LinkedIn & Social Integration</li>
+            <li>Consultation Booking Form</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">For Businesses</span>
+          <h3 style="margin-top: 0.8rem;">Business & Commercial Sites</h3>
+          <p>High-converting landing pages and business sites built to capture leads, display service offerings, and boost local organic search visibility.</p>
+        </div>
+        <div style="margin-top: 1.5rem;">
+          <ul style="padding-left: 1.2rem; font-size: 0.9rem; color: var(--text-muted);">
+            <li>Lead Intake & Web3Forms Contact Integration</li>
+            <li>SEO & Local Search Optimization</li>
+            <li>Fast Loading & Secure SSL Hosting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <h2 class="section-title">Our 3-Step Process</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Discovery & Strategy</h3>
+        <p>We define your core objectives, select your project structure, and organize content assets for your target audience.</p>
+      </div>
+      <div class="card">
+        <h3>2. Design & Development</h3>
+        <p>We build your responsive layout using optimized HTML, CSS, and modern user interface components.</p>
+      </div>
+      <div class="card">
+        <h3>3. Launch & Deployment</h3>
+        <p>We run final cross-browser quality checks, configure your custom domain, and publish your live website.</p>
       </div>
     </div>
   </section>
